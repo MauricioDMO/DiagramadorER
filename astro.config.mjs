@@ -3,6 +3,8 @@ import tailwind from '@astrojs/tailwind'
 import react from '@astrojs/react'
 import node from '@astrojs/node'
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
@@ -13,7 +15,5 @@ export default defineConfig({
       entrypoint: 'astro/assets/services/sharp'
     }
   },
-  adapter: node({
-    mode: 'standalone',
-  })
+  adapter: vercel()
 })
